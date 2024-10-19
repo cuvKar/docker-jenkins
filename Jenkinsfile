@@ -2,6 +2,9 @@ pipeline {
   agent any
   stages {
     stage("verify tooling") {
+      agent {
+        docker {image: docker}
+      }
       steps {
         sh '''
           docker version
