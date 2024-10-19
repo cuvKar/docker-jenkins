@@ -1,10 +1,9 @@
 pipeline {
-  agent any
+  agent {
+    docker { image: 'docker:dind' }
+  }
   stages {
     stage("verify tooling") {
-      agent {
-        docker { image: 'docker:dind' }
-      }
       steps {
         sh '''
           docker version
