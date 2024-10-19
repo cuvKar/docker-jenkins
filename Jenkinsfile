@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("verify tooling") {
       agent {
-        docker {image: docker}
+        docker {image: 'docker'}
       }
       steps {
         sh '''
